@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>A-Frame Minimalista</title>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.7.1/dist/aframe-master.min.js"></script>
+</head>
+<body>
+
+<a-scene cursor="rayOrigin: mouse">
+
+    <a-camera position="0 1.6 3">
+        <a-cursor color="red" raycaster="objects: none"></a-cursor>
+    </a-camera>
+
+    <a-box id="caja" position="-1.5 1.5 -2" color="#ff0000"></a-box>
+
+    <a-box id="clau" position="1.5 1.5 -2" color="#ffff00"></a-box>
+
+</a-scene>
+
+<script>
+    // Click a la caixa vermella per rotar
+    const caja = document.querySelector("#caja");
+    caja.addEventListener("click", () => {
+        caja.setAttribute("animation", "property: rotation; to: 0 360 0; dur: 2000; loop: true; easing: linear");
+    });
+
+    // Click al cub grog per anar a pagina2.html
+    const clau = document.querySelector("#clau");
+    clau.addEventListener("click", () => {
+        window.location.href = "pagina2.html";
+    });
+</script>
+
+</body>
+</html>
